@@ -54,7 +54,7 @@ def reconnection():
 	name = request.form['name']
 	print(name)
 	if name in app.Robots:
-		print("Reconnecting to the robot\n")
+		print("Reconnecting to {} vector with serial : {}".format(name,ID[name]))
 		app.Robots[name].vector.camera.close_camera_feed()
 		app.Robots[name].vector.disconnect()
 		del app.Robots[name]

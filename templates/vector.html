@@ -9,6 +9,22 @@
         margin: 0;
       }
 
+      #container {
+        width:100vw;
+        height:90vh;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 60% 40%;
+        -ms-grid-rows: 5% 5% 45% 45%;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 5% 5% 45% 45%;
+        grid-template-areas:
+          "blockly     image"
+          "blockly     image"
+          "blockly     image"
+          "blockly     image";
+      }
+
       /* Buttons */
       #someid button {
         padding: 1px 10px;
@@ -55,7 +71,11 @@
         background-color: white;
       }
 
-      #imagefeed   {max-height: 60vh; padding: 10px 0px; max-width: 640px;}
+      #blocklyArea  {grid-area: blockly; -ms-grid-row:1;-ms-grid-column:1; -ms-grid-row-span:4;}
+      #sidePannel   {grid-area: image; background-size: cover;-ms-grid-row:4;-ms-grid-column:2;}
+      #imageFeed {
+        width: 100%;
+      }
 
       /* Edge hack, God I hate this browser */
       _:-ms-lang(x),
@@ -137,9 +157,10 @@
 
   </head>
   <body>
-    <table id="main" width="100%" height=100%>
+    <table id="main" width="100%">
       <tr id="tabRow"class="right" height="2vh">
         <td class="tabmax">
+          <!--
           <button id="connectButton" class="notext" title="..." onclick="connect()">Connect to :</button>
           <select id="dropdownRobot">
             <option value="Purple">Purple</option>
@@ -148,23 +169,43 @@
             <option value="Yellow">Yellow</option>
             <option value="Lime">Lime</option>
           </select>
+          -->
           <button id="trashButton" class="notext" title="...">Trash</button>
           <button id="runButton" class="notext primary" title="..." onclick="sendMessage()">Run</button>
         </td>
       </tr>
-      <tr>
-        <td id="container" colspan="2" height="99%" width="100%">
-          <div id="blocklyArea" class="content" width="100%">
-          </div>
-        </td>
-      </tr>
-      <tr height="2vh" class="right">
-        <td class="tabmax">
-          <button class="popcam" onclick="openCameras()">+</button>
-        </td>
-      </tr>
     </table>
+    <div id="container">
+      <div id="blocklyArea"></div>
+      <table id="sidePannel">
+        <tr>
+          <tr id="imageRow">
+            <td colspan="5">
+              <img src="{{ url_for('static', filename="vectorhappy.jpg") }}" id="imagefeed">
+            <td>
+          </tr>
+        </tr>
+        <tr id="camsRow">
+          <td>
+            <button id="Purple" class="camsChoice" onclick="chooseCam(this.id)" style="background: #cc00cc;" value="Purple"></button>
+          </td>
+          <td>
+            <button id="Blue" class="camsChoice" onclick="chooseCam(this.id)" style="background: blue;" value="Blue"></button>
+          </td>
+          <td>
+            <button id="Green" class="camsChoice" onclick="chooseCam(this.id)" style="background: green;" value="Green"></button>
+          </td>
+          <td>
+            <button id="Yellow" class="camsChoice" onclick="chooseCam(this.id)" style="background: yellow;" value="Yellow"></button>
+          </td>
+          <td>
+            <button id="Lime" class="camsChoice" onclick="chooseCam(this.id)" style="background: lime;" value="Lime"></button>
+          </td>
+        </tr>
+      </table>
+    </div>
 
+<!--
     <div class="camera-popup" id="cameras">
       <table>
         <tr id="titleRow">
@@ -199,6 +240,7 @@
         </tr>
       </table>
     </div>
+-->
 
     <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
       <category name="Logic" colour="#5C81A6">
