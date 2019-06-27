@@ -28,7 +28,7 @@ def streaming_video(name):
 		if app.Robots[name].vector:
 			if(app.Robots[name].vector.camera.image_streaming_enabled()):
 				image = app.Robots[name].vector.camera.latest_image
-				image = image.annotate_image()
+				image = image.raw_image
 				img_io = BytesIO()
 				image.save(img_io, format='PNG')
 				yield (b'--frame\r\n'

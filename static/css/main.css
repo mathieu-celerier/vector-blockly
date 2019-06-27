@@ -1,0 +1,93 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  width:100vw;
+  height:90vh;
+}
+
+/* Buttons */
+#someid button {
+  padding: 1px 10px;
+  margin: 1px 5px;
+}
+#someid table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#main td {
+  padding: 0;
+  float:  right;
+}
+
+.closecam {
+  float: right;
+}
+
+.camera-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border: 3px solid #aaa;
+  border-radius: 15px 15px 0px 0px;
+  width: auto;
+  z-index: 900;
+}
+
+.camsChoice {
+  float: center;
+  height: 28px;
+  width: 35px;
+  border-radius: 8px;
+  border: none;
+}
+
+#footpage {
+  height: 2vh;
+}
+
+#cameras {
+  background-color: white;
+}
+
+#blocklyArea  {grid-area: blockly; -ms-grid-row:1;-ms-grid-column:1; -ms-grid-row-span:4;}
+
+#imagefeed {
+  max-width: 640px;
+  width: 50vw;
+}
+
+.menuButton img {
+  height: 80%;
+}
+
+.menuButton {
+  position: fixed;
+  z-index: 700;
+  bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  left: 10px;
+  padding: 0 4px;
+  width: 90px;
+  height: 50px;
+}
+
+#runButton {
+  position: fixed;
+  bottom: 80px;
+  height: 70px;
+  background-color: green;
+  padding: 1px 0;
+}
+
+/* Edge hack, God I hate this browser */
+_:-ms-lang(x),
+#container {
+  width:90vw;
+}

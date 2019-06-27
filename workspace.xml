@@ -1,0 +1,27 @@
+<xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none">
+  <block type="connection" id="uD2?e$G/Cuik_da{]XUq" x="213" y="88">
+    <field name="COLOUR">#ff0000</field>
+    <statement name="main">
+      <block type="leave_charger" id="7w!@V{M|xP3quM(Ju0;6">
+        <next>
+          <block type="turn" id="U`G5Z$dI=s#Kzo(f2M9]">
+            <field name="ORIENTATION">RIGHT</field>
+            <next>
+              <block type="go_forward" id="FfIe*J/S-1WAgk8GV}o]">
+                <field name="distance_cm">30</field>
+                <next>
+                  <block type="lift" id="?5I^U`-^RiD*p[Msj0~#">
+                    <field name="POS">T</field>
+                    <next>
+                      <block type="go_to_charger" id="/D5B:1s_sYQvaSsz3UUf"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
