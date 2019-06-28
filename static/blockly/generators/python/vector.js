@@ -21,9 +21,9 @@ Blockly.Python['connection'] = function(block) {
   } else {
     $('#imagefeed').removeClass('stream');
   }*/
-  code = code + indent('  robot.motors.set_wheel_motors(0,0)\n',2)
+  code = code + indent('    robot.motors.set_wheel_motors(0,0)\n',2)
   code = code + indent(statements_main,2)+'\n';
-  code = code + indent('  robot.motors.set_wheel_motors(0,0)\n',2)
+  code = code + indent('    robot.motors.set_wheel_motors(0,0)\n',2)
   code = code + 'if __name__ == "__main__":\n';
   code = code + '\tmain()'
   return code;
@@ -252,6 +252,39 @@ Blockly.Python['wait_for'] = function(block) {
   var value_condition = Blockly.Python.valueToCode(block, 'CONDITION', Blockly.Python.ORDER_ATOMIC);
   var code = '\nwhile not ' + value_condition + ':\n';
   code = code + '\tpass\n\n';
+  return code;
+};
+
+Blockly.Python['placeholder'] = function(block) {
+  var statements_code = Blockly.Python.statementToCode(block, 'CODE');
+  var code = '\n' + statements_code + '\n';
+  return code;
+};
+
+Blockly.Python['come_here'] = function(block) {
+  var code = 'robot.anim.play_animation_trigge("ComeHereSuccess")\n';
+  return code;
+};
+
+Blockly.Python['fear'] = function(block) {
+  var code = 'robot.anim.play_animation_trigge("CubePounceBackup")\n';
+  return code;
+};
+
+Blockly.Python['sulk'] = function(block) {
+  var code = 'robot.anim.play_animation_trigge("CubePounceLoseHand")\n';
+  code = code + 'robot.anim.play_animation_trigge("CubePounceUnready")\n';
+  return code;
+};
+
+Blockly.Python['attack'] = function(block) {
+  var code = 'robot.anim.play_animation_trigge("CubePouncePounceNormal")\n';
+  return code;
+};
+
+Blockly.Python['laugh'] = function(block) {
+  var code = 'robot.anim.play_animation_trigge("CubePounceWinHand")\n';
+  code = code + 'robot.anim.play_animation_trigge("CubePounceWinSession")\n';
   return code;
 };
 

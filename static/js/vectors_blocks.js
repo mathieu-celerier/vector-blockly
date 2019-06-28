@@ -532,12 +532,57 @@ var vectorsBlocks =
     },
     {
       "type": "input_statement",
-      "name": "NAME"
+      "name": "CODE"
     }
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 230,
+  "colour": "#d0d0d0",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "come_here",
+  "message0": "Come here",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#8F2BDD",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "fear",
+  "message0": "Feared/Startled",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#8F2BDD",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "sulk",
+  "message0": "Sulking",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#8F2BDD",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "attack",
+  "message0": "Attack",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#8F2BDD",
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "laugh",
+  "message0": "Laugh",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": "#8F2BDD",
   "tooltip": "",
   "helpUrl": ""
 }];

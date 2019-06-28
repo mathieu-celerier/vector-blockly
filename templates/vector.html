@@ -191,16 +191,20 @@
           <field name="POSITION">UP</field>
         </block>
       </category>
-      <category name="Lights" colour="#463E8E">
+      <!--<category name="Lights" colour="#463E8E">
 
-      </category>
+      </category>-->
       <category name="Sound" colour="#FF802C">
         <block type="say">
           <field name="TEXT">I love robot</field>
         </block>
       </category>
       <category name="Animations" colour="#8F2BDD">
-
+        <block type="come_here"></block>
+        <block type="fear"></block>
+        <block type="sulk"></block>
+        <block type="attack"></block>
+        <block type="laugh"></block>
       </category>
       <category name="Control" colour="#EEC71C">
         <block type="while_loop"></block>
@@ -232,11 +236,7 @@
       <block type="connection">
         <field name="COLOUR">#cc00cc</field>
         <statement name="main">
-          <block type="leave_charger">
-            <next>
-              <block type="go_to_charger"></block>
-            </next>
-          </block>
+          <block type="placeholder"></block>
         </statement>
       </block>
     </xml>
