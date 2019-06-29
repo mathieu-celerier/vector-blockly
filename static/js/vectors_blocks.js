@@ -537,7 +537,7 @@ var vectorsBlocks =
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": "#d0d0d0",
+  "colour": "#a0a0a0",
   "tooltip": "",
   "helpUrl": ""
 },
